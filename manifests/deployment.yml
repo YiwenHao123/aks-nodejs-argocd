@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: yiwenhaoaksnodejsargocd 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: yiwenhaoaksnodejsargocd
+  template:
+    metadata:
+      labels:
+        app: yiwenhaoaksnodejsargocd 
+    spec:
+      containers:
+        - name: yiwenhaoaksnodejsargocd 
+          image: nodergcontainerregistry.azurecr.io/yiwenhaoaksnodejsargocd
+          ports:
+          - containerPort: 1337
